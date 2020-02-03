@@ -2,6 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
+Resolve https://gitlab.com/shakuro-public/frontend-test
+
+1) Refactoring:
+This code find last index of chars `a` or `b` in string `s`
+
+Improve version:
+a) For short strings 
+```javascript
+function func(s, a, b) {
+    return Math.max(s.lastIndexOf(a), s.lastIndexOf(b));
+}
+```
+b) 
+```javascript
+function func(s, a, b) {
+    if (s.length === 0) {
+        return -1;
+    }
+    const length = s.length;
+    for(let i = length-1; i >= 0; i--) {
+        if (s[i] === a || s[i] === b) {
+            return i;
+        }   
+    }
+    return -1;
+}
+````
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
