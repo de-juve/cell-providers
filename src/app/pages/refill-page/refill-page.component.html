@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="title">
+        <div>Provider account replenishment</div>
+    </div>
+    <div class="flex-bottom m-a-0">
+        <div class="col-12">
+            <app-cell-provider *ngIf="!!provider"
+                               [provider]="provider"
+                               [readonly]="false"
+                               [loading]="loading"
+                               (saveProvider)="onSaveProvider($event)"
+                               (cancelEditProvider)="onReturn()"
+            ></app-cell-provider>
+        </div>
+        <div class="col" *ngIf="!provider">
+            <a [routerLink]="['/']">Back</a>
+        </div>
+    </div>
+
+</div>

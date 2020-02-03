@@ -1,0 +1,42 @@
+.abs {
+    position: absolute
+}
+
+.abs-top {
+    top: 0
+}
+
+.abs-bottom {
+    bottom: 0
+}
+
+.abs-left {
+    left: 0
+}
+
+.abs-right {
+    right: 0
+}
+
+.relative {
+    position: relative
+}
+
+.static {
+    position: static
+}
+
+.fixed {
+    position: fixed
+}
+.text-left {
+    text-align: left!important;
+}
+.text-right {
+    text-align: right!important;
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

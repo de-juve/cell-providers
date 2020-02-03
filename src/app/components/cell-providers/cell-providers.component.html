@@ -1,0 +1,8 @@
+<div class="flex-bottom m-a-0">
+    <div class="col-4_md-6_sm-12_xs-12"
+         *ngFor="let provider of providers; trackBy: trackById">
+        <app-cell-provider [provider]="provider"
+                           (selectProvider)="selectProvider.emit($event)"></app-cell-provider>
+    </div>
+</div>
+

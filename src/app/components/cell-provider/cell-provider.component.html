@@ -1,0 +1,87 @@
+<div class="flex-bottom provider relative bg-white_hover m-a-0" *ngIf="readonly; else showEditForm"
+     (click)="selectProvider.emit(provider)">
+    <div class="provider-name">
+        <span class="text-overflow">{{provider.name}}</span>
+        <span class="bold small m-l-10 m-r-5" style="line-height: 1.3">
+            {{provider.balance|currency:'RUB':true:'1.0-2':'ru'}}
+        </span>
+
+    </div>
+    <div class="m-t-5">
+        <span class="bold small m-l-10 m-r-5" style="line-height: 1.3">
+            {{provider.phone|phone: 'RU'}}
+        </span>
+    </div>
+</div>
+
+<ng-template #showEditForm>
+    <form class="" [formGroup]="form">
+        <div class="flex-bottom m-a-0">
+        <div class="col-4_lg-5_md-6_sm-12_xs-12">
+            <mat-form-field appearance="standard" style="width: 100%">
+                <mat-label>Mobile Provider Name</mat-label>
+                <input matInput
+                       formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="col-4_lg-5_md-6_sm-12_xs-12">
+            <mat-form-field appearance="standard" style="width: 100%">
+                <mat-label>Phone</mat-label>
+                <input matInput
+                       placeholder="Enter your phone number"
+                       #phone
+                       (blur)="onCheckPhoneValue(phone.value)"
+                       [textMask]="{mask: phoneMask}"
+                       formControlName="phone">
+                <mat-error *ngIf="form.get('phone').hasError('required') ">
+                    Phone is required field
+                </mat-error>
+                <mat-error *ngIf="form.get('phone').hasError('pattern') ">
+                    Invalid format
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-4_lg-5_md-6_sm-12_xs-12">
+            <mat-form-field appearance="standard" style="width: 100%">
+                <mat-label>Balance</mat-label>
+                <input matInput
+                       placeholder="Your balance"
+                       formControlName="balance">
+            </mat-form-field>
+        </div>
+            <div class="col-4_lg-5_md-6_sm-12_xs-12" [class.hide]="form.get('phone').invalid">
+                <mat-form-field appearance="standard" style="width: 100%">
+                    <mat-label>Replenishment amount, rub</mat-label>
+                    <input matInput
+                           placeholder="Indicate the amount of replenishment"
+                           #amount
+                           (blur)="onCheckAmountValue(amount.value)"
+                           [textMask]="{mask: numberMask}"
+                           formControlName="amount">
+                    <mat-error *ngIf="form.get('amount').hasError('required') ">
+                        Amount is required field
+                    </mat-error>
+                    <mat-error *ngIf="form.get('amount').hasError('pattern') ">
+                        Invalid format
+                    </mat-error>
+                    <mat-error *ngIf="form.get('amount').hasError('min') || form.get('amount').hasError('max')">
+                        Enter amount from 1 to 1000
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-progress-bar mode="query" *ngIf="loading"></mat-progress-bar>
+        <div class="flex-bottom w-100">
+            <a (click)="onSave()"
+
+               class="st3 m-l-15">
+                <mat-icon class="green hover" [class.disabled]="loading">check</mat-icon>
+            </a>
+            <a (click)="onCancel()"
+               [class.disabled]="loading"
+               class="st3 m-l-15">
+                <mat-icon class="gray hover" [class.disabled]="loading">clear</mat-icon>
+            </a>
+        </div>
+    </form>
+</ng-template>

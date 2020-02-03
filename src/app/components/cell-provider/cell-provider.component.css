@@ -1,0 +1,42 @@
+
+.provider {
+    padding: 25px 0;
+    border: #222222 solid thin;
+}
+
+.provider-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.provider-phone {
+
+}
+
+.provider-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+/*.todo {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 25px 0;
+    background-color: #fafafa;
+}
+
+.todo-control {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-actions {
+    display: flex;
+    justify-content: flex-end;
+}*/

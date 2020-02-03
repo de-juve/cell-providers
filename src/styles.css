@@ -1,1 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+@import "reset.css";
+@import "layout.css";
+@import "position.css";
+@import "color.css";
+
+html {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-weight: normal;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #fafafa;
+    font-size: 14px;
+//min-width: 960px;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.root-container {
+    padding-left: 90px;
+    padding-right: 90px;
+}
+@media (max-width: 768px) {
+    .root-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+
+.small {
+    font-size: 80%;
+}
+.bold {
+    font-weight: 600;
+}
+.m-r-5 {
+    margin-right: 5px;
+}
+.m-l-10 {
+    margin-left: 15px;
+}
+.m-l-15 {
+    margin-left: 15px;
+}
+.m-l--5 {
+    margin-right: -5px;
+}
+.m-a-0 {
+    margin: 0;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+.m-t-5 {
+    margin-top: 5px;
+}
+.m-t-10 {
+    margin-top: 10px;
+}
+.p-l-30 {
+    padding-left: 30px;
+}
+.p-x-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.p-a-10 {
+    padding: 10px;
+}
+.st3 {
+    font-size: 32px;
+    line-height: inherit;
+}
+.st4 {
+    font-size: 24px;
+    line-height: inherit;
+}
+.st5 {
+    font-size: 16px;
+    line-height: inherit;
+}
+.w-100 {
+    width: 100%;
+}
+.hide {
+    display:none !important;
+}
+
+.container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    margin: 50px auto;
+}
+
+.title {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    letter-spacing: 2px;
+    padding: 10px 0 20px 0;
+    text-transform: uppercase;
+}

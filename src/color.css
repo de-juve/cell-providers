@@ -1,0 +1,52 @@
+.orange {
+    color:#f8bb87
+}
+.orange.hover:hover{
+    color:#c05e0c;
+    cursor:pointer
+}
+.red {
+    color:#cd4039
+}
+.red.hover:hover{
+    color:#a8302b;
+    cursor:pointer
+}
+.blue{
+    color:#359cc6
+}
+.blue.hover:hover{
+    color:#2a7c9e;
+    cursor:pointer
+}
+.green{
+    color:#5db95d
+}
+.green.hover:hover{
+    color:#449f44;
+    cursor:pointer
+}
+.gray {
+    color: #888;
+}
+.gray.hover:hover{
+    color:#6f6f6f
+}
+.bg-orange-light {
+    background-color:#f8bb87
+}
+.bg-red {
+    background-color:#cd4039
+}
+.disabled, .disabled:hover {
+    color: #c8c8c8;
+    cursor: default;
+}
+.bg-white-light,[class*=bg-white] {
+    background-color: #fff
+}
+
+[class*=bg-white_hover]:hover {
+    background-color: #e6e6e6;
+    cursor: pointer
+}
